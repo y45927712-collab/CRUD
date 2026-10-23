@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign up or login</title>
+    <link rel="stylesheet" href="style_sign.css">
+</head>
+<body>
+    <!-- الحاوية الأساسية لواجهة تسجيل الدخول الخاصة بك -->
+    <section id="authContainer">
+        <div class="login-box">
+            <form id="authForm">
+                <h2 id="authTitle">login</h2>
+                
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail-sharp"></ion-icon></span>
+                    <!-- أضفنا id="authEmail" هنا -->
+                    <input type="email" id="authEmail" required>
+                    <label>Email</label>
+                </div>
+                
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <!-- أضفنا id="authPassword" هنا -->
+                    <input type="password" id="authPassword" required>
+                    <label>Password</label>
+                </div>
+                
+                <div class="remmember-froget">
+                    <label><input type="checkbox">Remember me</label>
+                    <a href="#" class="a">Forgot Password?</a>
+                </div>
+                
+                <!-- أضفنا id="authSubmitBtn" هنا -->
+                <button type="submit" id="authSubmitBtn" class="btn">Login</button>
+                
+                <div class="register-link">
+                    <p id="authSwitchText">Don't have an account? <a href="#" id="authSwitchLink" class="register-link">Register</a></p>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- هنا نقوم باستدعاء واجهة لوحة تحكم المنتجات (CRUD) وتكون مخفية في البداية -->
+    <!-- يمكنك وضع كود الـ HTML الخاص بلوحة تحكم المنتجات كاملة هنا بالأسفل داخل هذا الـ div -->
+    <div id="mainApp" style="display: none; padding: 20px;">
+        <!-- كود الـ CRUD الحالي الخاص بك يوضع هنا بالكامل -->
+        <h1 id="hiMas"></h1>
+        <button id="logoutBtn" style="width: auto; padding: 5px 15px; height: auto; background: red; color: white;">Logout</button>
+        <!-- بقية عناصر مشروع الـ CRUD الخاص بك (المدخلات، الجدول، أزرار البحث) -->
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.js"></script>
+    <script src="script_sign.js"></script>
+</body>
+</html>

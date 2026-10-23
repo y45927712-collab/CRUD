@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en,ar">
+<head>
+    
+    <!-- كود ربط أيقونة الموقع المفضلة Favicon -->
+    <link rel="icon" type="image/png" href="profile.com.png">
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CURD</title>
+    <!-- وصف الموقع لمحركات البحث مثل Google -->
+    <meta name="description" content="نظام احترافي لإدارة المنتجات (CRUD System) يتيح لك إضافة، تعديل، وحذف المنتجات، مع حساب تلقائي للإجمالي، وطباعة التقارير وتصديرها لملف Excel.">
+
+    <!-- الكلمات المفتاحية لمساعدة محركات البحث في تصنيف موقعك -->
+    <meta name="keywords" content="CRUD system, إدارة منتجات, نظام مخازن, يوسف برمجيات, JavaScript, Excel export">
+
+    <!-- كود إضافي لجعل شكل الرابط احترافي عند مشاركته على الفيسبوك أو الواتساب -->
+    <meta property="og:title" content="Products CRUD System - نظام إدارة المنتجات">
+    <meta property="og:description" content="قم بإدارة مخزونك بذكاء؛ نظام ممتد لحساب التكاليف وتصدير تقارير الإكسل بضغطة زر.">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/png" href="profile.com.png">
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CURD</title>
+    
+    <!-- وصف الموقع لمحركات البحث مثل Google -->
+    <meta name="description" content="نظام احترافي لإدارة المنتجات (CRUD System) يتيح لك إضافة، تعديل، وحذف المنتجات، مع حساب تلقائي للإجمالي، وطباعة التقارير وتصديرها لملف Excel.">
+
+    <!-- الكلمات المفتاحية لمساعدة محركات البحث في تصنيف موقعك -->
+    <meta name="keywords" content="CRUD system, إدارة منتجات, نظام مخازن, يوسف برمجيات, JavaScript, Excel export">
+
+    <!-- كود إضافي لجعل شكل الرابط احترافي عند المشاركة -->
+    <meta property="og:title" content="Products CRUD System - نظام إدارة المنتجات">
+    <meta property="og:description" content="قم بإدارة مخزونك بذكاء؛ نظام ممتد لحساب التكاليف وتصدير تقارير الإكسل بضغطة زر.">
+    <meta property="og:type" content="website">
+</head>
+<body>
+
+    <div class="crud">
+        <div class="head">
+            <h2>crud</h2>
+            <button id="reset">reset name</button>
+            <button id="logout">logout</button>
+            <p>Products CRUD system</p>
+            <p id="hiMas"></p>
+        </div>
+
+
+        <div class="inputs">
+            <input placeholder="title" type="text" id="title">
+            <div class="price">
+                <input onkeyup="get_total()" type="number" id="price" placeholder="price">
+                <input onkeyup="get_total()" type="number" id="taxes" placeholder="taxes">
+                <input onkeyup="get_total()" type="number" id="ads" placeholder="ads">
+                <input onkeyup="get_total()" type="number" id="discount" placeholder="discount">
+                <small onkeyup="get_total()" id="total"></small>
+            </div>
+            <input placeholder="count" type="number" id="count">
+            <input placeholder="category" type="text" id="category">
+            <input type="text" id="review" placeholder="review">
+
+            <br>
+            <button id="submit">create</button>
+        </div>
+
+
+        <div class="outputs">
+            <div class="searchblocs">
+                <input onkeyup="searchdata(this.value)" type="text" id="search" placeholder="search">
+                <div class="btnsearch">
+                    <button onclick="getsearchmood(this.id)" id="searchTitle">search by Title</button>
+                    <button onclick="getsearchmood(this.id)" id="searchCategory">search by Category</button>
+                </div>
+                <div class="export">
+                    <button id="printBtn" onclick="printProducts()">Print Report</button>
+                    <button id="exportBtn" onclick="exportToExcel()">Export to Excel</button>
+
+
+                </div>
+            </div>
+            <div id="deleteAll">
+
+            </div>
+            <table>
+                <tr>
+                   <th>id</th>
+                    <th>title</th>
+                    <th>price</th>
+                    <th>taxes</th>
+                    <th>ads</th>
+                    <th>discount</th>
+                    <th>total</th>
+                    <th>category</th>
+                    <th>REVIEW</th> <!-- العمود الجديد -->
+                    <th>update</th>
+                    <th>delete</th>
+                </tr>
+                <tbody id="tbody">
+                    
+                </tbody>
+            </table>
+        </div>
+
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
