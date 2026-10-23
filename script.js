@@ -8,7 +8,7 @@ if (localStorage.getItem('isLoggedIn') !== 'true') {
 let activeUser = localStorage.getItem('loggedInUser');
 let hiMas = document.getElementById('hiMas');
 if (hiMas && activeUser) {
-    hiMas.innerHTML = "What's new, " + activeUser;
+    hiMas.innerHTML = "What's new " + activeUser;
 }
 
 // برمجة زر تسجيل الخروج (Logout) الآمنة
@@ -28,7 +28,7 @@ if (resetBtn) {
         let newName = prompt('So, what is your new name?');
         if (newName) {
             localStorage.setItem('loggedInUser', newName);
-            if (hiMas) hiMas.innerHTML = "What's new, " + newName;
+            if (hiMas) hiMas.innerHTML = "What's new " + newName;
         }
     }
 }
@@ -77,14 +77,13 @@ submit.onclick = function(){
         total: total.innerHTML,
         count: count.value,
         category: category.value.toLowerCase(),
-        review: review.value.trim() || 'no review'
+        review: review.value.trim() || 'not good not bad'
     }
-
     if(title.value != '' && price.value != '' && category.value != ''){
         if(mood === 'create' ){
             if(newpro.count > 1 && newpro.count < 501){
                 for(let i = 0; i < newpro.count; i++){
-                    datapro.push(JSON.parse(JSON.stringify(newpro))); 
+                    datapro.push(JSON.parse(JSON.stringify(newpro)));
                 }
             }else{
                 datapro.push(newpro);
