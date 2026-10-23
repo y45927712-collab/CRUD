@@ -24,7 +24,7 @@ if(authSwitchLink) {
         e.preventDefault();
         if(authMood === 'login') {
             authMood = 'register';
-            authTitle.innerHTML = 'Register';
+            authTitle.innerHTML = 'Sign Up';
             authSubmitBtn.innerHTML = 'Sign Up';
             authSwitchText.innerHTML = 'Already have an account? <a href="#" id="authSwitchLink" class="register-link">Login</a>';
         } else {
