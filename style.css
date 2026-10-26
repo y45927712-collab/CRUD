@@ -260,6 +260,27 @@ tbody tr:hover {
     }
 }
 
+
+.About {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 6px 12px;
+    border-radius: 8px;
+    background: rgba(0, 207, 255, 0.1);
+    color: var(--blue);
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.25s, box-shadow 0.25s;
+}
+.About:hover {
+    background: rgba(0, 207, 255, 0.2);
+    box-shadow: 0 0 12px rgba(0, 207, 255, 0.25);
+}
+.About:active {
+    transform: scale(0.98);
+}
+
 /* Print: hide controls and use paper-friendly colors */
 @media print {
     body {
